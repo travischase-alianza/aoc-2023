@@ -1,16 +1,21 @@
-package com.alianza.aoc.common;
+package com.alianza.aoc.controller;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+import com.alianza.aoc.common.IAggregate;
+import com.alianza.aoc.common.ITransform;
+
 public class FileProcessor {
     String filePath;
     ITransform transformer;
+    IAggregate aggregator;
 
-    public FileProcessor(String filePath, ITransform transformer) {
+    public FileProcessor(String filePath, ITransform transformer, IAggregate aggregator) {
         this.filePath = filePath;
         this.transformer = transformer;
+        this.aggregator = aggregator;
     }
 
     public void run() {
@@ -23,10 +28,15 @@ public class FileProcessor {
  
             // It holds true till threre is content in file
             while ((str = br.readLine()) != null) {
-                String result = this.transformer.transform(str);
+                String transformResult = this.transformer.transform(str);
                 
                 // Printing the file data
-                System.out.println(result);
+                System.out.println("Transform: " + transformResult);
+
+                String aggregateResult = this.aggregator.aggregate(transformResult);
+                
+                // Printing the file data
+                System.out.println("Aggregate: " + aggregateResult);
             }
         }
  
