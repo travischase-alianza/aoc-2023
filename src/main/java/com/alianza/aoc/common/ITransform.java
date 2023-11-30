@@ -1,5 +1,5 @@
 package com.alianza.aoc.common;
 
-public interface ITransform<T> {
-    public T transform(T in);
+public interface ITransform {
+    public String transform(String in);
 }

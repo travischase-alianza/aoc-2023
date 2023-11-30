@@ -4,11 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class FileProcessor<T> {
+public class FileProcessor {
     String filePath;
-    ITransform<T> transformer;
+    ITransform transformer;
 
-    public FileProcessor(String filePath, ITransform<T> transformer) {
+    public FileProcessor(String filePath, ITransform transformer) {
         this.filePath = filePath;
         this.transformer = transformer;
     }
@@ -23,9 +23,10 @@ public class FileProcessor<T> {
  
             // It holds true till threre is content in file
             while ((str = br.readLine()) != null) {
- 
+                String result = this.transformer.transform(str);
+                
                 // Printing the file data
-                System.out.println(str);
+                System.out.println(result);
             }
         }
  
