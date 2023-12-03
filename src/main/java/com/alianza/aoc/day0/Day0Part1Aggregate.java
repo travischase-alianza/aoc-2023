@@ -1,8 +1,8 @@
-package com.alianza.aoc.day1;
+package com.alianza.aoc.day0;
 
 import com.alianza.aoc.common.IAggregate;
 
-public class Day0Part0Aggregate implements IAggregate {
+public class Day0Part1Aggregate implements IAggregate {
     int sum = 0;
 
     public String aggregate(String in) {
