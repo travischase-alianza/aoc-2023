@@ -1,8 +1,14 @@
 package com.alianza.aoc.app;
 
 import com.alianza.aoc.controller.FileProcessor;
-import com.alianza.aoc.day1.Day1Part1Aggregate;
-import com.alianza.aoc.day1.Day1Part1Transform;
+
+// Day 1 Part 1
+// import com.alianza.aoc.day1.Day1Part1Aggregate;
+// import com.alianza.aoc.day1.Day1Part1Transform;
+
+// Day 1 Part 2
+import com.alianza.aoc.day1.Day1Part2Aggregate;
+import com.alianza.aoc.day1.Day1Part2Transform;
 
 public class App 
 {
@@ -12,9 +18,15 @@ public class App
 
         System.out.println( "--- Advent of Code! ---" );
 
-        Day1Part1Transform day1Part1Transformer = new Day1Part1Transform();
-        Day1Part1Aggregate day1Part1Aggregator = new Day1Part1Aggregate();
-        FileProcessor stringFileProcessor = new FileProcessor(day1FilePath, day1Part1Transformer, day1Part1Aggregator);
+        // Day 1 Part 1
+        // Day1Part1Transform transformer = new Day1Part1Transform();
+        // Day1Part1Aggregate aggregator = new Day1Part1Aggregate();
+
+        // Day 1 Part 2
+        Day1Part2Transform transformer = new Day1Part2Transform();
+        Day1Part2Aggregate aggregator = new Day1Part2Aggregate();
+
+        FileProcessor stringFileProcessor = new FileProcessor(day1FilePath, transformer, aggregator);
         stringFileProcessor.run();
     }
 }
