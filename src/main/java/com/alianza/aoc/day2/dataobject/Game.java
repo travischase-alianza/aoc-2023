@@ -1,4 +1,4 @@
-package com.alianza.aoc.day2.part1;
+package com.alianza.aoc.day2.data_object;
 
 import java.util.ArrayList;
 

@@ -1,11 +1,10 @@
 package com.alianza.aoc.day2;
 
-import com.alianza.aoc.day2.part1.Game;
-import com.alianza.aoc.day2.part1.GameSet;
-
 import java.util.HashMap;
 
 import com.alianza.aoc.common.ITransform;
+import com.alianza.aoc.day2.dataobject.Game;
+import com.alianza.aoc.day2.dataobject.GameSet;
 
 public class Day2Part1Transform implements ITransform {
     int redLimit;
