@@ -1,4 +1,4 @@
-package com.alianza.aoc.day2.data_object;
+package com.alianza.aoc.day2.dataobject;
 
 public class GameSet {
     int red;
