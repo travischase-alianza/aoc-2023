@@ -28,15 +28,18 @@ public class FileProcessor {
  
             // It holds true till threre is content in file
             while ((str = br.readLine()) != null) {
+                // Printing the file data
+                System.out.println("[DEBUG Processor] Source Line: " + str);
+
                 String transformResult = this.transformer.transform(str);
                 
                 // Printing the file data
-                System.out.println("Transform: " + transformResult);
+                System.out.println("[DEBUG Processor] Transform Result: " + transformResult);
 
                 String aggregateResult = this.aggregator.aggregate(transformResult);
                 
                 // Printing the file data
-                System.out.println("Aggregate: " + aggregateResult);
+                System.out.println("[DEBUG Processor] Aggregate Result: " + aggregateResult);
             }
         }
  
