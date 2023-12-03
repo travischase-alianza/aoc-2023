@@ -11,8 +11,12 @@ import com.alianza.aoc.controller.FileProcessor;
 // import com.alianza.aoc.day1.Day1Part2Transform;
 
 // Day 2 Part 1
-import com.alianza.aoc.day2.Day2Part1Aggregate;
-import com.alianza.aoc.day2.Day2Part1Transform;
+// import com.alianza.aoc.day2.Day2Part1Aggregate;
+// import com.alianza.aoc.day2.Day2Part1Transform;
+
+// Day 2 Part 2
+import com.alianza.aoc.day2.Day2Part2Aggregate;
+import com.alianza.aoc.day2.Day2Part2Transform;
 
 public class App 
 {
@@ -35,8 +39,12 @@ public class App
         // Day1Part2Aggregate aggregator = new Day1Part2Aggregate();
 
         // Day 2 Part 1
-        Day2Part1Transform transformer = new Day2Part1Transform();
-        Day2Part1Aggregate aggregator = new Day2Part1Aggregate();
+        // Day2Part1Transform transformer = new Day2Part1Transform();
+        // Day2Part1Aggregate aggregator = new Day2Part1Aggregate();
+
+        // Day 2 Part 2
+        Day2Part2Transform transformer = new Day2Part2Transform();
+        Day2Part2Aggregate aggregator = new Day2Part2Aggregate();
 
         FileProcessor stringFileProcessor = new FileProcessor(filePath, transformer, aggregator);
         stringFileProcessor.run();
