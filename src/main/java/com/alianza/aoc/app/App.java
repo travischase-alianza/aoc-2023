@@ -15,8 +15,12 @@ import com.alianza.aoc.controller.FileProcessor;
 // import com.alianza.aoc.day2.Day2Part1Transform;
 
 // Day 2 Part 2
-import com.alianza.aoc.day2.Day2Part2Aggregate;
-import com.alianza.aoc.day2.Day2Part2Transform;
+// import com.alianza.aoc.day2.Day2Part2Aggregate;
+// import com.alianza.aoc.day2.Day2Part2Transform;
+
+// Day 3 Part 1
+import com.alianza.aoc.day3.Day3Part1Aggregate;
+import com.alianza.aoc.day3.Day3Part1Transform;
 
 public class App 
 {
@@ -26,7 +30,10 @@ public class App
         // String filePath = "./inputs/day1.txt";
 
         // Day 2
-        String filePath = "./inputs/day2.txt";
+        // String filePath = "./inputs/day2.txt";
+
+        // Day 3
+        String filePath = "./inputs/day3.txt";
 
         System.out.println( "--- Advent of Code! ---" );
 
@@ -43,8 +50,12 @@ public class App
         // Day2Part1Aggregate aggregator = new Day2Part1Aggregate();
 
         // Day 2 Part 2
-        Day2Part2Transform transformer = new Day2Part2Transform();
-        Day2Part2Aggregate aggregator = new Day2Part2Aggregate();
+        // Day2Part2Transform transformer = new Day2Part2Transform();
+        // Day2Part2Aggregate aggregator = new Day2Part2Aggregate();
+
+        // Day 3 Part 1
+        Day3Part1Transform transformer = new Day3Part1Transform();
+        Day3Part1Aggregate aggregator = new Day3Part1Aggregate();
 
         FileProcessor stringFileProcessor = new FileProcessor(filePath, transformer, aggregator);
         stringFileProcessor.run();
