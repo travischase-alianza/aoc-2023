@@ -11,9 +11,9 @@ import com.alianza.aoc.day3.dataobject.PartIndicator;
 import com.alianza.aoc.day3.dataobject.PartNumber;
 
 public class Day3Part1Transform implements ITransformMap {
-    public Map<String, Object> transform(int id, String in) {
-        ArrayList<PartNumber> parts = this.parseLineForParts(in);
-        ArrayList<PartIndicator> indicators = this.parseLineForIndicators(in);
+    public Map<String, Object> transform(int lineNumber, String in) {
+        ArrayList<PartNumber> parts = this.parseLineForParts(lineNumber, in);
+        ArrayList<PartIndicator> indicators = this.parseLineForIndicators(lineNumber, in);
 
         System.out.println("[DEBUG Transform] New Transform: " + in);
 
@@ -24,18 +24,21 @@ public class Day3Part1Transform implements ITransformMap {
         return parsedLine;
     }
 
-    private ArrayList<PartIndicator> parseLineForIndicators(String line) {
+    private ArrayList<PartIndicator> parseLineForIndicators(int lineNumber, String line) {
         ArrayList<PartIndicator> indicators = new ArrayList<>();
 
         // Split the line into chars
         char[] chars = line.toCharArray();
 
         for(int i = 0; chars.length > i; i++) {
+            String theChar = "" + chars[i];
             Pattern patternIndicator = this.getRegexIndicator();
-            Matcher matcherIndicator = patternIndicator.matcher("" +chars[i]);
+            Matcher matcherIndicator = patternIndicator.matcher(theChar);
 
             if(matcherIndicator.matches()) {
+                PartIndicator indicator = new PartIndicator(i, lineNumber, theChar);
 
+                indicators.add(indicator);
             }
         }
 
@@ -46,7 +49,7 @@ public class Day3Part1Transform implements ITransformMap {
         return Pattern.compile("[^\\d\\.]");
     }
 
-    private ArrayList<PartNumber> parseLineForParts(String line) {
+    private ArrayList<PartNumber> parseLineForParts(int lineNumber, String line) {
         ArrayList<PartNumber> parts = new ArrayList<>();
 
         return parts;
