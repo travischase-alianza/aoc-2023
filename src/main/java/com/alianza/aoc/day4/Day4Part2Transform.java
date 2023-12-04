@@ -2,22 +2,21 @@ package com.alianza.aoc.day4;
 
 import java.util.ArrayList;
 
-import com.alianza.aoc.common.ITransformString;
+import com.alianza.aoc.common.ITransform;
 import com.alianza.aoc.day4.dataobject.Card;
 import com.alianza.aoc.day4.dataobject.CardNumbers;
 
-public class Day4Part2Transform implements ITransformString {
-    public String transform(int id, String in) {
+public class Day4Part2Transform implements ITransform<Card> {
+    public Card transform(int id, String in) {
         Card card = this.parseLine(in);
 
         ArrayList<Integer> matches = this.findMatches(card);
 
         System.out.println("[DEBUG Transform] Matches Found: " + matches.size());
 
-        double doublingExp = matches.size() - 1;
-        double payout = Math.pow(2, doublingExp);
+        card.setMatches(matches);
 
-        return "" + ((int)payout);
+        return card;
     }
 
     private ArrayList<Integer> findMatches(Card card) {

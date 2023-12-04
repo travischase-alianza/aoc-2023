@@ -1,5 +1,7 @@
 package com.alianza.aoc.day4.dataobject;
 
+import java.util.ArrayList;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +10,8 @@ public class Card {
 
     @Getter @Setter CardNumbers winningNumbers;
     @Getter @Setter CardNumbers possibleNumbers;
+
+    @Getter @Setter ArrayList<Integer> matches;
 
     public Card(int id) {
         this.id = id;
