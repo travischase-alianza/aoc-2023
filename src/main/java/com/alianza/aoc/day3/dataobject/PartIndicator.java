@@ -1,7 +1,10 @@
 package com.alianza.aoc.day3.dataobject;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class PartIndicator {
-    int lineIndex;
-    int lineNumber;
-    String symbol;
+    @Getter @Setter int lineIndex;
+    @Getter @Setter int lineNumber;
+    @Getter @Setter String symbol;
 }

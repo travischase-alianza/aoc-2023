@@ -3,6 +3,8 @@ package com.alianza.aoc.day3;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.alianza.aoc.common.ITransformMap;
 import com.alianza.aoc.day3.dataobject.PartIndicator;
@@ -28,7 +30,20 @@ public class Day3Part1Transform implements ITransformMap {
         // Split the line into chars
         char[] chars = line.toCharArray();
 
+        for(int i = 0; chars.length > i; i++) {
+            Pattern patternIndicator = this.getRegexIndicator();
+            Matcher matcherIndicator = patternIndicator.matcher("" +chars[i]);
+
+            if(matcherIndicator.matches()) {
+
+            }
+        }
+
         return indicators;
+    }
+
+    private Pattern getRegexIndicator() {
+        return Pattern.compile("[^\\d\\.]");
     }
 
     private ArrayList<PartNumber> parseLineForParts(String line) {

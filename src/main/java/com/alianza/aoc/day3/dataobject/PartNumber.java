@@ -1,9 +1,12 @@
 package com.alianza.aoc.day3.dataobject;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class PartNumber {
-    int number;
-    int lineNumber;
-    int startingLineIndex;
-    int endingLineIndex;
+    @Getter @Setter int number;
+    @Getter @Setter int lineNumber;
+    @Getter @Setter int startingLineIndex;
+    @Getter @Setter int endingLineIndex;
     
 }
