@@ -6,8 +6,10 @@ import lombok.Setter;
 
 @AllArgsConstructor
 public class PartNumber {
-    @Getter @Setter int number;
-    @Getter @Setter int lineNumber;
-    @Getter @Setter int startingLineIndex;
-    @Getter @Setter int endingLineIndex;
+    @Getter int number;
+    @Getter int lineNumber;
+    @Getter int startingLineIndex;
+    @Getter int endingLineIndex;
+
+    @Getter @Setter boolean isRealPart;
 }

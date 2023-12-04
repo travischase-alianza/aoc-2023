@@ -42,6 +42,8 @@ public class FileProcessor {
                 
                 // Printing the file data
                 System.out.println("[DEBUG Processor] Aggregate Result: " + aggregateResult.toString());
+
+                id++;
             }
         }
  
