@@ -2,12 +2,12 @@ package com.alianza.aoc.day2;
 
 import java.util.HashMap;
 
-import com.alianza.aoc.common.ITransform;
+import com.alianza.aoc.common.ITransformString;
 import com.alianza.aoc.day2.dataobject.Game;
 import com.alianza.aoc.day2.dataobject.GameSet;
 
-public class Day2Part2Transform implements ITransform {
-    public String transform(String in) {
+public class Day2Part2Transform implements ITransformString {
+    public String transform(int id, String in) {
         // reset the limits each game for part 2
         int redLimit = 0;
         int greenLimit = 0;

@@ -5,8 +5,8 @@ import com.alianza.aoc.common.IAggregate;
 public class Day1Part1Aggregate implements IAggregate {
     int sum = 0;
 
-    public String aggregate(String in) {
-        int nextNumber = Integer.parseInt(in);
+    public Object aggregate(int id, Object in) {
+        int nextNumber = Integer.parseInt(in.toString());
 
         System.out.println("[DEBUG Aggregate] Next number: " + Integer.toString(nextNumber));
 

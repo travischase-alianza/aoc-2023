@@ -4,9 +4,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Map;
 
-import com.alianza.aoc.common.ITransform;
+import com.alianza.aoc.common.ITransformString;
 
-public class Day1Part2Transform implements ITransform {
+public class Day1Part2Transform implements ITransformString {
     Map<String, String> numbers;
 
     public Day1Part2Transform() {
@@ -26,7 +26,7 @@ public class Day1Part2Transform implements ITransform {
         );
     }
 
-    public String transform(String in) {
+    public String transform(int id, String in) {
         Pattern patternTwoNumbers = this.getRegexTwoNumbers();
         Pattern patternOneNumber = this.getRegexOneNumber();
         Matcher matcherTwoNumbers = patternTwoNumbers.matcher(in);

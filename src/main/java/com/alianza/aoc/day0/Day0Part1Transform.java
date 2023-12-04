@@ -1,9 +1,9 @@
 package com.alianza.aoc.day0;
 
-import com.alianza.aoc.common.ITransform;
+import com.alianza.aoc.common.ITransformString;
 
-public class Day0Part1Transform implements ITransform {
-    public String transform(String in) {
+public class Day0Part1Transform implements ITransformString {
+    public String transform(int id, String in) {
          // TODO: REPLACE TEMPLATE
 
          System.out.println("[DEBUG Transform] New Transform: " + in);

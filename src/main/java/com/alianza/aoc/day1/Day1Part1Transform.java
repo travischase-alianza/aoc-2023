@@ -3,10 +3,10 @@ package com.alianza.aoc.day1;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.alianza.aoc.common.ITransform;
+import com.alianza.aoc.common.ITransformString;
 
-public class Day1Part1Transform implements ITransform {
-    public String transform(String in) {
+public class Day1Part1Transform implements ITransformString {
+    public String transform(int id, String in) {
         Pattern patternTwoNumbers = this.getRegexTwoNumbers();
         Pattern patternOneNumber = this.getRegexOneNumber();
         Matcher matcherTwoNumbers = patternTwoNumbers.matcher(in);

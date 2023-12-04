@@ -27,19 +27,21 @@ public class FileProcessor {
             String str;
  
             // It holds true till threre is content in file
+            int id = 0;
+
             while ((str = br.readLine()) != null) {
                 // Printing the file data
-                System.out.println("[DEBUG Processor] Source Line: " + str);
+                System.out.println("[DEBUG Processor] Source Line " + id + ": " + str);
 
-                String transformResult = this.transformer.transform(str);
+                Object transformResult = this.transformer.transform(id,str);
                 
                 // Printing the file data
-                System.out.println("[DEBUG Processor] Transform Result: " + transformResult);
+                System.out.println("[DEBUG Processor] Transform Result: " + transformResult.toString());
 
-                String aggregateResult = this.aggregator.aggregate(transformResult);
+                Object aggregateResult = this.aggregator.aggregate(id, transformResult);
                 
                 // Printing the file data
-                System.out.println("[DEBUG Processor] Aggregate Result: " + aggregateResult);
+                System.out.println("[DEBUG Processor] Aggregate Result: " + aggregateResult.toString());
             }
         }
  

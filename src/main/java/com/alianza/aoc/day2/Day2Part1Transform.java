@@ -2,11 +2,11 @@ package com.alianza.aoc.day2;
 
 import java.util.HashMap;
 
-import com.alianza.aoc.common.ITransform;
+import com.alianza.aoc.common.ITransformString;
 import com.alianza.aoc.day2.dataobject.Game;
 import com.alianza.aoc.day2.dataobject.GameSet;
 
-public class Day2Part1Transform implements ITransform {
+public class Day2Part1Transform implements ITransformString {
     int redLimit;
     int greenLimit;
     int blueLimit;
@@ -17,7 +17,7 @@ public class Day2Part1Transform implements ITransform {
         this.blueLimit = 14;
     }
 
-    public String transform(String in) {
+    public String transform(int id, String in) {
         Game game = this.parseLine(in);
 
         System.out.println("[DEBUG Transform] Game Id: " + game.getId());
