@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.alianza.aoc.common.IAggregate;
 import com.alianza.aoc.day04.dataobject.Card;
 
-public class Day04Part2Aggregate implements IAggregate {
+public class Day04Part2Aggregate implements IAggregate<Object> {
     ArrayList<Card> cards;
 
     public Day04Part2Aggregate() {

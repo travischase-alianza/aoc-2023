@@ -5,17 +5,20 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import com.alianza.aoc.common.IAggregate;
+import com.alianza.aoc.common.IReport;
 import com.alianza.aoc.common.ITransform;
 
 public class FileProcessor {
     String filePath;
     ITransform transformer;
     IAggregate aggregator;
+    IReport reporter;
 
-    public FileProcessor(String filePath, ITransform transformer, IAggregate aggregator) {
+    public FileProcessor(String filePath, ITransform transformer, IAggregate aggregator, IReport reporter) {
         this.filePath = filePath;
         this.transformer = transformer;
         this.aggregator = aggregator;
+        this.reporter = reporter;
     }
 
     public void run() {
@@ -28,23 +31,27 @@ public class FileProcessor {
  
             // It holds true till threre is content in file
             int id = 0;
+            Object transformResult = new Object();
+            Object aggregateResult = new Object();
 
             while ((str = br.readLine()) != null) {
                 // Printing the file data
                 System.out.println("[DEBUG Processor] Source Line " + id + ": " + str);
 
-                Object transformResult = this.transformer.transform(id,str);
+                transformResult = this.transformer.transform(id,str);
                 
                 // Printing the file data
                 System.out.println("[DEBUG Processor] Transform Result: " + transformResult.toString());
 
-                Object aggregateResult = this.aggregator.aggregate(id, transformResult);
+                aggregateResult = this.aggregator.aggregate(id, transformResult);
                 
                 // Printing the file data
                 System.out.println("[DEBUG Processor] Aggregate Result: " + aggregateResult.toString());
 
                 id++;
             }
+
+            this.reporter.report(id, transformResult, aggregateResult);
         }
  
         // Catch block to handle the exceptions

@@ -2,7 +2,7 @@ package com.alianza.aoc.day22;
 
 import com.alianza.aoc.common.IAggregate;
 
-public class Day22Part1Aggregate implements IAggregate {
+public class Day22Part1Aggregate implements IAggregate<Object> {
     public Object aggregate(int id, Object in) {
         // TODO: REPLACE TEMPLATE
 

@@ -7,7 +7,7 @@ import com.alianza.aoc.common.IAggregate;
 import com.alianza.aoc.day03.dataobject.PartIndicator;
 import com.alianza.aoc.day03.dataobject.PartNumber;
 
-public class Day03Part2Aggregate implements IAggregate {
+public class Day03Part2Aggregate implements IAggregate<Object> {
 
     int sum;
 

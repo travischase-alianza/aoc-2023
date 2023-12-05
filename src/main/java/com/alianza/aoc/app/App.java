@@ -2,24 +2,26 @@ package com.alianza.aoc.app;
 
 import com.alianza.aoc.controller.FileProcessor;
 
-// Day 4 Part 2
-import com.alianza.aoc.day04.Day04Part2Aggregate;
-import com.alianza.aoc.day04.Day04Part2Transform;
+// Day 5 Part 1
+import com.alianza.aoc.day05.Day05Part1Aggregate;
+import com.alianza.aoc.day05.Day05Part1Transform;
+import com.alianza.aoc.day05.Day05Part1Report;
 
 public class App 
 {
     public static void main( String[] args )
     {
-        // Day 4
-        String filePath = "./inputs/day04.txt";
+        // Day 5
+        String filePath = "./inputs/day05.txt";
 
         System.out.println( "--- Advent of Code! ---" );
 
-        // Day 4 Part 2
-        Day04Part2Transform transformer = new Day04Part2Transform();
-        Day04Part2Aggregate aggregator = new Day04Part2Aggregate();
+        // Day 5 Part 1
+        Day05Part1Transform transformer = new Day05Part1Transform();
+        Day05Part1Aggregate aggregator = new Day05Part1Aggregate();
+        Day05Part1Report reporter = new Day05Part1Report();
 
-        FileProcessor stringFileProcessor = new FileProcessor(filePath, transformer, aggregator);
+        FileProcessor stringFileProcessor = new FileProcessor(filePath, transformer, aggregator, reporter);
         stringFileProcessor.run();
     }
 }

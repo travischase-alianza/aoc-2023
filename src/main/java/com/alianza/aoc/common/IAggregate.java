@@ -1,5 +1,5 @@
 package com.alianza.aoc.common;
 
-public interface IAggregate {
-    public Object aggregate(int id, Object in); 
+public interface IAggregate<T> {
+    public T aggregate(int id, Object in); 
 }
