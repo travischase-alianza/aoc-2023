@@ -11,7 +11,7 @@ public class App
     public static void main( String[] args )
     {
         // Day 4
-        String filePath = "./inputs/day4.txt";
+        String filePath = "./inputs/day04.txt";
 
         System.out.println( "--- Advent of Code! ---" );
 
