@@ -2,7 +2,7 @@ package com.alianza.aoc.day09;
 
 import com.alianza.aoc.common.ITransformString;
 
-public class Day0Part1Transform implements ITransformString {
+public class Day09Part1Transform implements ITransformString {
     public String transform(int id, String in) {
          // TODO: REPLACE TEMPLATE
 

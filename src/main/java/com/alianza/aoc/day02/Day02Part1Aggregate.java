@@ -2,7 +2,7 @@ package com.alianza.aoc.day02;
 
 import com.alianza.aoc.common.IAggregate;
 
-public class Day2Part1Aggregate implements IAggregate {
+public class Day02Part1Aggregate implements IAggregate {
     int sum = 0;
 
     public Object aggregate(int id, Object in) {

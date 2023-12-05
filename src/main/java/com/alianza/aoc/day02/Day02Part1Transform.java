@@ -6,12 +6,12 @@ import com.alianza.aoc.common.ITransformString;
 import com.alianza.aoc.day02.dataobject.Game;
 import com.alianza.aoc.day02.dataobject.GameSet;
 
-public class Day2Part1Transform implements ITransformString {
+public class Day02Part1Transform implements ITransformString {
     int redLimit;
     int greenLimit;
     int blueLimit;
 
-    public Day2Part1Transform () {
+    public Day02Part1Transform () {
         this.redLimit = 12;
         this.greenLimit = 13;
         this.blueLimit = 14;

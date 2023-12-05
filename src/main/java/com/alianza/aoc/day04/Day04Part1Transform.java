@@ -6,7 +6,7 @@ import com.alianza.aoc.common.ITransformString;
 import com.alianza.aoc.day04.dataobject.Card;
 import com.alianza.aoc.day04.dataobject.CardNumbers;
 
-public class Day4Part1Transform implements ITransformString {
+public class Day04Part1Transform implements ITransformString {
     public String transform(int id, String in) {
         Card card = this.parseLine(in);
 

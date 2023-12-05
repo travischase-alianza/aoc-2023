@@ -1,4 +1,4 @@
-package com.alianza.aoc.day0;
+package com.alianza.aoc.day00;
 
 import com.alianza.aoc.common.IAggregate;
 

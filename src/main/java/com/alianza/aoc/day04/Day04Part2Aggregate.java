@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import com.alianza.aoc.common.IAggregate;
 import com.alianza.aoc.day04.dataobject.Card;
 
-public class Day4Part2Aggregate implements IAggregate {
+public class Day04Part2Aggregate implements IAggregate {
     ArrayList<Card> cards;
 
-    public Day4Part2Aggregate() {
+    public Day04Part2Aggregate() {
         this.cards = new ArrayList<>();
     }
 
