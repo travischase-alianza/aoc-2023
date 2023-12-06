@@ -5,20 +5,12 @@ import java.util.ArrayList;
 import lombok.Getter;
 import lombok.Setter;
 
-public class Almanac {
-    @Getter @Setter ArrayList<Long> seeds;
-    @Getter @Setter AlmanacMap seedToSoil;
-    @Getter @Setter AlmanacMap soilToFertilizer;
-    @Getter @Setter AlmanacMap fertilizerToWater;
-    @Getter @Setter AlmanacMap waterToLight;
-    @Getter @Setter AlmanacMap lightToTemperature;
-    @Getter @Setter AlmanacMap temperatureToHumidity;
-    @Getter @Setter AlmanacMap humiditytoLocation;
+public class AlmanacSeedRange extends Almanac {
+    @Getter @Setter AlmanacMap seedRanges;
 
-    @Getter @Setter ParsingState metaParsingState;
-
-    public Almanac() {
+    public AlmanacSeedRange() {
         this.seeds = new ArrayList<>();
+        this.seedRanges = new AlmanacMap();
         this.seedToSoil = new AlmanacMap();
         this.soilToFertilizer = new AlmanacMap();
         this.fertilizerToWater = new AlmanacMap();

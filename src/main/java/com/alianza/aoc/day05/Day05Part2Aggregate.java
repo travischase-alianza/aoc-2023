@@ -3,26 +3,25 @@ package com.alianza.aoc.day05;
 import java.util.ArrayList;
 
 import com.alianza.aoc.common.IAggregate;
-import com.alianza.aoc.day05.dataobject.Almanac;
 import com.alianza.aoc.day05.dataobject.AlmanacMapRange;
+import com.alianza.aoc.day05.dataobject.AlmanacSeedRange;
 import com.alianza.aoc.day05.dataobject.SeedAtlas;
 import com.alianza.aoc.day05.dataobject.SeedMap;
-import com.alianza.aoc.day05.dataobject.ParsingState;
 import com.alianza.aoc.day05.dataobject.ProductType;
 
-public class Day05Part1Aggregate implements IAggregate<Object> {
+public class Day05Part2Aggregate implements IAggregate<Object> {
 
     SeedAtlas seedAtlas;
 
-    public Day05Part1Aggregate() {
+    public Day05Part2Aggregate() {
         this.seedAtlas = new SeedAtlas();
     }
 
     public Object aggregate(int id, Object in) {
-        return this.processState(((Almanac)in));
+        return this.processState(((AlmanacSeedRange)in));
     }
     
-    private SeedAtlas processState(Almanac in) {
+    private SeedAtlas processState(AlmanacSeedRange in) {
         System.out.println("[DEBUG Aggregate] -- State " + in.getMetaParsingState() + " --");
 
         switch(in.getMetaParsingState()) {
@@ -57,7 +56,7 @@ public class Day05Part1Aggregate implements IAggregate<Object> {
         return this.seedAtlas;
     }
 
-    private void buildSeeds(Almanac in) {
+    private void buildSeeds(AlmanacSeedRange in) {
         for(int i = 0; in.getSeeds().size() > i; i++) {
             long seed = in.getSeeds().get(i);
 
@@ -66,7 +65,7 @@ public class Day05Part1Aggregate implements IAggregate<Object> {
         }
     }
 
-    private void buildSeedToSoil(Almanac in) {
+    private void buildSeedToSoil(AlmanacSeedRange in) {
         for(int i = 0; in.getSeeds().size() > i; i++) {
             long seed = in.getSeeds().get(i);
             SeedMap seedMap = this.seedAtlas.getSeedMap(seed);
@@ -93,7 +92,7 @@ public class Day05Part1Aggregate implements IAggregate<Object> {
 
     }
 
-    private void buildSoilToFertilizer(Almanac in) {
+    private void buildSoilToFertilizer(AlmanacSeedRange in) {
         for(int i = 0; in.getSeeds().size() > i; i++) {
             long seed = in.getSeeds().get(i);
             SeedMap seedMap = this.seedAtlas.getSeedMap(seed);
@@ -119,7 +118,7 @@ public class Day05Part1Aggregate implements IAggregate<Object> {
         }
     }
 
-    private void buildFertilizerToWater(Almanac in) {
+    private void buildFertilizerToWater(AlmanacSeedRange in) {
         for(int i = 0; in.getSeeds().size() > i; i++) {
             long seed = in.getSeeds().get(i);
             SeedMap seedMap = this.seedAtlas.getSeedMap(seed);
@@ -145,7 +144,7 @@ public class Day05Part1Aggregate implements IAggregate<Object> {
         }
     }
 
-    private void buildWaterToLight(Almanac in) {
+    private void buildWaterToLight(AlmanacSeedRange in) {
         for(int i = 0; in.getSeeds().size() > i; i++) {
             long seed = in.getSeeds().get(i);
             SeedMap seedMap = this.seedAtlas.getSeedMap(seed);
@@ -171,7 +170,7 @@ public class Day05Part1Aggregate implements IAggregate<Object> {
         }
     }
 
-    private void buildLightToTemperature(Almanac in) {
+    private void buildLightToTemperature(AlmanacSeedRange in) {
         for(int i = 0; in.getSeeds().size() > i; i++) {
             long seed = in.getSeeds().get(i);
             SeedMap seedMap = this.seedAtlas.getSeedMap(seed);
@@ -197,7 +196,7 @@ public class Day05Part1Aggregate implements IAggregate<Object> {
         }
     }
 
-    private void buildTemperatureToHumidity(Almanac in) {
+    private void buildTemperatureToHumidity(AlmanacSeedRange in) {
         for(int i = 0; in.getSeeds().size() > i; i++) {
             long seed = in.getSeeds().get(i);
             SeedMap seedMap = this.seedAtlas.getSeedMap(seed);
@@ -223,7 +222,7 @@ public class Day05Part1Aggregate implements IAggregate<Object> {
         }
     }
 
-    private void buildHumidityToLocation(Almanac in) {
+    private void buildHumidityToLocation(AlmanacSeedRange in) {
         for(int i = 0; in.getSeeds().size() > i; i++) {
             long seed = in.getSeeds().get(i);
             SeedMap seedMap = this.seedAtlas.getSeedMap(seed);

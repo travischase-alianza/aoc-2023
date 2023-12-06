@@ -1,0 +1,12 @@
+package com.alianza.aoc.day05.dataobject;
+
+public enum ParsingState {
+    SEEDS,
+    SEEDTOSOIL,
+    SOILTOFERTILIZER,
+    FERTILIZERTOWATER,
+    WATERTOLIGHT,
+    LIGHTTOTEMPERATURE,
+    TEMPERATURETOHUMIDITY,
+    HUMIDITYTOLOCATION
+}

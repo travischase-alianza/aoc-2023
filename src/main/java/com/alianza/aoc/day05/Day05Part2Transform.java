@@ -1,19 +1,19 @@
 package com.alianza.aoc.day05;
 
 import com.alianza.aoc.common.ITransform;
-import com.alianza.aoc.day05.dataobject.Almanac;
+import com.alianza.aoc.day05.dataobject.AlmanacSeedRange;
 import com.alianza.aoc.day05.dataobject.AlmanacMapRange;
 import com.alianza.aoc.day05.dataobject.ParsingState;
 
 import lombok.Getter;
 
-public class Day05Part1Transform implements ITransform<Object> {
+public class Day05Part2Transform implements ITransform<Object> {
     @Getter ParsingState parsingState;
-    @Getter Almanac almanac;
+    @Getter AlmanacSeedRange almanac;
 
-    public Day05Part1Transform() {
+    public Day05Part2Transform() {
         parsingState = ParsingState.SEEDS;
-        this.almanac = new Almanac();
+        this.almanac = new AlmanacSeedRange();
     }
 
     public Object transform(int id, String in) {
@@ -64,9 +64,21 @@ public class Day05Part1Transform implements ITransform<Object> {
         if(in.matches("^seeds:.*")) {
             String[] parts = in.split("\\:\\s+");
             String[] seeds = parts[1].split("\\s+");
-            for(int i = 0; seeds.length > i; i++) {
-                this.almanac.getSeeds().add(Long.parseLong(seeds[i]));
+
+            long Seed1Start = Long.parseLong(seeds[0]);
+            long Seed1Length = Long.parseLong(seeds[1]);
+            long Seed2Start = Long.parseLong(seeds[2]);
+            long Seed2Length = Long.parseLong(seeds[3]);
+
+            for(int i = 0; seeds.length > i; i+=2) {
+                long seedStart = Long.parseLong(seeds[i]);
+                long seedLength = Long.parseLong(seeds[i + 1]);
+
+                AlmanacMapRange mapRange = new AlmanacMapRange(seedStart, seedStart, seedLength);
+
+                this.almanac.getSeedRanges().getRanges().add(mapRange);
             }
+
             System.out.println("[DEBUG Transform] Seeds " + this.almanac.getSeeds().toString());
         }
     }
