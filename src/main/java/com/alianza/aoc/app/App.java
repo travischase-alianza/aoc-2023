@@ -5,23 +5,23 @@ import java.time.Duration;
 
 import com.alianza.aoc.controller.FileProcessor;
 
-// Day 5 Part 2
-import com.alianza.aoc.day05.Day05Part2Aggregate;
-import com.alianza.aoc.day05.Day05Part2Transform;
-import com.alianza.aoc.day05.Day05Part2Report;
+// Day 6 Part 1
+import com.alianza.aoc.day06.Day06Part1Aggregate;
+import com.alianza.aoc.day06.Day06Part1Transform;
+import com.alianza.aoc.day06.Day06Part1Report;
 
 public class App {
     public static void main( String[] args ) {
         Instant start = Instant.now();
         // Day 5
-        String filePath = "./inputs/day05.txt";
+        String filePath = "./inputs/day06.txt";
 
         System.out.println( "--- Advent of Code! ---" );
 
         // Day 5 Part 1
-        Day05Part2Transform transformer = new Day05Part2Transform();
-        Day05Part2Aggregate aggregator = new Day05Part2Aggregate();
-        Day05Part2Report reporter = new Day05Part2Report();
+        Day06Part1Transform transformer = new Day06Part1Transform();
+        Day06Part1Aggregate aggregator = new Day06Part1Aggregate();
+        Day06Part1Report reporter = new Day06Part1Report();
 
         FileProcessor stringFileProcessor = new FileProcessor(filePath, transformer, aggregator, reporter);
         stringFileProcessor.run();
