@@ -8,11 +8,11 @@ import com.alianza.aoc.common.ITransform;
 import com.alianza.aoc.day06.dataobject.RaceStat;
 import com.alianza.aoc.day06.dataobject.RaceStatList;
 
-public class Day06Part1Transform implements ITransform<HashMap> {
+public class Day06Part2Transform implements ITransform<HashMap> {
     RaceStatList raceStatList;
     HashMap<Integer,RaceStatList> possibleWins;
 
-    public Day06Part1Transform() {
+    public Day06Part2Transform() {
         raceStatList = new RaceStatList();
         possibleWins = new HashMap<>();
     }
@@ -30,11 +30,14 @@ public class Day06Part1Transform implements ITransform<HashMap> {
             System.out.println("[DEBUG Transform] Time match: " + match);
             String matches[] = match.split("\\s+");
 
+            String number = "";
             for(int i = 0; matches.length > i; i++) {
-                long time = Long.parseLong(matches[i]);
-                this.raceStatList.getRaceStats().add(new RaceStat());
-                this.raceStatList.getRaceStats().get(i).setTime(time);
+                number +=  matches[i];
             }
+
+            long time = Long.parseLong(number);
+            this.raceStatList.getRaceStats().add(new RaceStat());
+            this.raceStatList.getRaceStats().get(0).setTime(time);
 
         } else {
             Pattern patternDistance = this.getRegexDistance();
@@ -49,12 +52,15 @@ public class Day06Part1Transform implements ITransform<HashMap> {
                 System.out.println("[DEBUG Transform] Distance match: " + match);
                 String matches[] = match.split("\\s+"); 
 
+                String number = "";
                 for(int i = 0; matches.length > i; i++) {
-                    long distance = Long.parseLong(matches[i]);
-                    RaceStat race = this.raceStatList.getRaceStats().get(i);
-                    race.setDistance(distance); 
-                    this.possibleWins.put(i, this.calculateWins(race));
+                    number +=  matches[i];
                 }
+
+                long distance = Long.parseLong(number);
+                RaceStat race = this.raceStatList.getRaceStats().get(0);
+                race.setDistance(distance); 
+                this.possibleWins.put(0, this.calculateWins(race));
             }
         }
 

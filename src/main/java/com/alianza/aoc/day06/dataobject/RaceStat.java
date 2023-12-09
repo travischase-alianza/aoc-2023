@@ -8,8 +8,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RaceStat {
-    @Getter @Setter int time;
-    @Getter @Setter int distance;
+    @Getter @Setter long time;
+    @Getter @Setter long distance;
 
     @Override
     public String toString() {

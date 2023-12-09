@@ -6,9 +6,9 @@ import java.time.Duration;
 import com.alianza.aoc.controller.FileProcessor;
 
 // Day 6 Part 1
-import com.alianza.aoc.day06.Day06Part1Aggregate;
-import com.alianza.aoc.day06.Day06Part1Transform;
-import com.alianza.aoc.day06.Day06Part1Report;
+import com.alianza.aoc.day06.Day06Part2Aggregate;
+import com.alianza.aoc.day06.Day06Part2Transform;
+import com.alianza.aoc.day06.Day06Part2Report;
 
 public class App {
     public static void main( String[] args ) {
@@ -19,9 +19,9 @@ public class App {
         System.out.println( "--- Advent of Code! ---" );
 
         // Day 5 Part 1
-        Day06Part1Transform transformer = new Day06Part1Transform();
-        Day06Part1Aggregate aggregator = new Day06Part1Aggregate();
-        Day06Part1Report reporter = new Day06Part1Report();
+        Day06Part2Transform transformer = new Day06Part2Transform();
+        Day06Part2Aggregate aggregator = new Day06Part2Aggregate();
+        Day06Part2Report reporter = new Day06Part2Report();
 
         FileProcessor stringFileProcessor = new FileProcessor(filePath, transformer, aggregator, reporter);
         stringFileProcessor.run();
